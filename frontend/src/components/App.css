@@ -1,0 +1,155 @@
+/* @import url(https://fonts.googleapis.com/css?family=Roboto:400,700); */
+
+/* --------- GLOBAL STYLES --------- */
+:root {
+  --color-background: rgba(21, 32, 43, 1);
+  --color-gray: rgb(136, 153, 166);
+  --color-white: white;
+  --color-light-blue: rgba(29, 161, 242, 1);
+  --color-dark-blue: rgb(27, 149, 224);
+  --font-primary: "Roboto";
+  --font-weight-regular: 400;
+  --font-weight-thick: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary), -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: var(--font-weight-regular);
+  font-size: 18px;
+  color: var(--color-white);
+  background-color: var(--color-background);
+}
+
+li {
+  list-style: none;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+#app {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  margin-top: 15px;
+}
+
+#sidebarLeft,
+#sidebarRight,
+#feed {
+  display: flex;
+  flex-direction: column;
+}
+
+#sidebarLeft {
+  width: calc((100vw - 750px) * 0.5);
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 70vh;
+  background-color: green !important;
+  padding-right: 40px;
+}
+
+#feed {
+  width: 750px;
+  background-color: red !important;
+}
+
+#sidebarRight {
+  width: calc((100vw - 750px) * 0.5);
+  background-color: blue !important;
+}
+
+.sidebarItem {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.sidebarItem__label {
+  margin-left: 10px;
+}
+
+.sidebarItem {
+  font-size: 20px !important;
+}
+
+#sidebarLeft__tweet {
+  color: var(--color-white) !important;
+  background-color: var(--color-light-blue) !important;
+  border-radius: 9999px !important;
+  text-transform: none !important;
+  padding: 10px !important;
+}
+
+.tweet__icons-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.tweet__icons-row div {
+  margin-right: 20px;
+  align-items: center;
+}
+
+.tweet {
+  display: flex;
+  padding: 10px;
+  outline: solid thin white;
+}
+
+.tweet__gutter {
+  padding-right: 5px;
+}
+.tweet__body {
+  padding-left: 5px;
+}
+
+.tweet__header {
+  display: flex;
+  align-items: center;
+}
+
+/* Breakpoints */
+/* At <= 1280px, labels on left sidebar are hidden and "Tweet" button changes to a circle icon */
+@media screen and (max-width: 1280px) {
+  .sidebarItem__label {
+    display: none !important;
+  }
+  /* change button to circle */
+}
+
+.tweet img {
+  border-radius: 50%;
+}
+
+/* At <= 1004px, content on right sidebar is not shown */
+@media screen and (max-width: 1004px) {
+  #sidebarRight {
+    display: none !important;
+  }
+}
+
+/* At <= 499px, left sidebar is also not shown */
+/* This is the mobile app. Instead 4 icons are shown at bottom 'Home, Explore, Notifications, and Messages'. */
+/* The tweet button is in the bottom right */
+/* Top left has profile avatar, and toggles navbar which comes from left. This has remainder of links ('Lists, Bookmarks, Profile', etc.) */
+@media screen and (max-width: 499px) {
+  #sidebarLeft {
+    display: none !important;
+  }
+}

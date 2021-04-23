@@ -1,17 +1,20 @@
-import React, { Component } from "react";
-import { render } from "react-dom";
+import React from 'react';
+import ReactDOM from "react-dom";
+import Feed from './panel-center/Feed';
+import SidebarLeft from './panel-left/SidebarLeft';
+import SidebarRight from './panel-right/SidebarRight';
+import './App.css';
 
-export default class App extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <h1> Hello World! </h1>
-    );
-  }
+const App = () => {
+  return (
+    <>
+      <SidebarLeft />
+      <Feed />
+      <SidebarRight />
+    </>
+  )
 }
 
-const appDiv = document.getElementById("app");
-render(<App />, appDiv);
+export default App;
+
+ReactDOM.render(<App />, document.getElementById("app"));
